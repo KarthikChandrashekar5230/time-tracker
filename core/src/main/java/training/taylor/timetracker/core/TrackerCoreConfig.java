@@ -17,8 +17,7 @@ public class TrackerCoreConfig {
 
     /** @return - Getter retrieving list of Time Entries. */
     @Bean(name = "timesheet")
-    public final List<TimeEntry> timeEntries() {
-        return new ArrayList<>();
+    public List<TimeEntry> timeEntries() {
+        return new ArrayList<TimeEntry>();
     }
 }
-
