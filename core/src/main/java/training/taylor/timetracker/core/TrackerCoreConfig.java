@@ -21,3 +21,4 @@ public class TrackerCoreConfig {
         return new ArrayList<TimeEntry>();
     }
 }
+
