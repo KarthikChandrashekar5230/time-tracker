@@ -16,26 +16,26 @@ public class Tracker {
     private List<TimeEntry> entries;
 
     /** @param entry object to be added to the list. */
-    public void add(final TimeEntry entry) {
+    public final void add(final TimeEntry entry) {
         entries.add(entry);
     }
 
     /** @param entry object to be removed from the List. */
-    public void remove(final TimeEntry entry) {
+    public final void remove(final TimeEntry entry) {
         if (entries != null) {
             entries.remove(entry);
         }
     }
 
     /** @return - Number of TimeEntry Object in the list. */
-    public int size() {
+    public final int size() {
         return entries.size();
     }
 
     /** @param  index ,specific TimeEntry Object's position from the list
      * @return - Retrieving specific TimeEntry Object from the list
      * */
-    public TimeEntry get(final int index) {
+    public final TimeEntry get(final int index) {
         try {
             if (index < 0) {
                 throw new IllegalArgumentException();
@@ -47,3 +47,4 @@ public class Tracker {
         return entries.get(index);
     }
 }
+
