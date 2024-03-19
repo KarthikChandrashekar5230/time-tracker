@@ -1,55 +1,49 @@
-package training.taylor.timetracker.core.dao;
+package training.taylor.timetracker.core;
 
-import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import training.taylor.timetracker.core.dao.TimeEntry;
+
+import java.util.List;
 
 /**
  * Created by Jason on 6/19/2015.
  */
 @Component
-@Scope("prototype")
-public class TimeEntry {
-    /** TimeEntry Object's description. */
-    private String description;
-    /** TimeEntry Object's rate. */
-    private float rate;
+public class Tracker {
+    /** TimeEntries list. */
+    @Autowired
+    private List<TimeEntry> entries;
 
-    /** TimeEntry Object's time. */
-    private int time;
-
-    /** @return - Getter to retrieve the description. */
-    public final String getDescription() {
-        return description;
+    /** @param entry object to be added to the list. */
+    public final void add(final TimeEntry entry) {
+        entries.add(entry);
     }
 
-    /** @param value of type string to be set as description. */
-    public final void setDescription(final String value) {
-        this.description = value;
+    /** @param entry object to be removed from the List. */
+    public final void remove(final TimeEntry entry) {
+        if (entries != null) {
+            entries.remove(entry);
+        }
     }
 
-    /** @return - Getter to retrieve the rate. */
-    public final float getRate() {
-        return rate;
+    /** @return - Number of TimeEntry Object in the list. */
+    public final int size() {
+        return entries.size();
     }
 
-    /** @param value of type float to be set as Rate. */
-    public final void setRate(final float value) {
-        this.rate = value;
-    }
-
-    /** @return - Getter to retrieve the time. */
-    public final int getTime() {
-        return time;
-    }
-    /** @param value of type integer to be set as Time. */
-    public final void setTime(final int value) {
-        this.time = value;
-    }
-
-    /** Method to represent the object into a string format. */
-    @Override
-    public final String toString() {
-        return "TimeEntry{" + "description='" + description + '\''
-                + ", rate=" + rate + ", time=" + time + '}';
+    /** @param  index ,specific TimeEntry Object's position from the list
+     * @return - Retrieving specific TimeEntry Object from the list
+     * */
+    public final TimeEntry get(final int index) {
+        try {
+            if (index < 0) {
+                throw new IllegalArgumentException();
+            }
+        } catch (Exception e) {
+            System.out.println("Execution interrupted with the exception "
+                    + e.getMessage());
+        }
+        return entries.get(index);
     }
 }
