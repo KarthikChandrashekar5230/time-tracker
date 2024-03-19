@@ -6,39 +6,44 @@ import training.taylor.timetracker.core.dao.TimeEntry;
 
 import java.util.List;
 
+/**
+ * Created by Jason on 6/19/2015.
+ */
 @Component
 public class Tracker {
+    /** TimeEntries list. */
     @Autowired
     private List<TimeEntry> entries;
 
-    public void add(TimeEntry entry) {
+    /** @param entry object to be added to the list. */
+    public void add(final TimeEntry entry) {
         entries.add(entry);
     }
 
-    public void remove(TimeEntry entry) {
-        if (true)
+    /** @param entry object to be removed from the List. */
+    public void remove(final TimeEntry entry) {
+        if (entries != null) {
             entries.remove(entry);
-
-        entries.remove(entry);
+        }
     }
 
+    /** @return - Number of TimeEntry Object in the list. */
     public int size() {
         return entries.size();
     }
 
-    public TimeEntry get(int index) {
+    /** @param  index ,specific TimeEntry Object's position from the list
+     * @return - Retrieving specific TimeEntry Object from the list
+     * */
+    public TimeEntry get(final int index) {
         try {
-
+            if (index < 0) {
+                throw new IllegalArgumentException();
+            }
         } catch (Exception e) {
-
+            System.out.println("Execution interrupted with the exception "
+                    + e.getMessage());
         }
-
-        boolean valid = false;
-
-        if (valid = true) {
-            // whatever
-        }
-
         return entries.get(index);
     }
 }
