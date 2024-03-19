@@ -18,37 +18,37 @@ public class TimeEntry {
     private int time;
 
     /** @return - Getter to retrieve the description. */
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
 
     /** @param value of type string to be set as description. */
-    public void setDescription(final String value) {
+    public final void setDescription(final String value) {
         this.description = value;
     }
 
     /** @return - Getter to retrieve the rate. */
-    public float getRate() {
+    public final float getRate() {
         return rate;
     }
 
     /** @param value of type float to be set as Rate. */
-    public void setRate(final float value) {
+    public final void setRate(final float value) {
         this.rate = value;
     }
 
     /** @return - Getter to retrieve the time. */
-    public int getTime() {
+    public final int getTime() {
         return time;
     }
     /** @param value of type integer to be set as Time. */
-    public void setTime(final int value) {
+    public final void setTime(final int value) {
         this.time = value;
     }
 
     /** Method to represent the object into a string format. */
     @Override
-    public String toString() {
+    public final String toString() {
         return "TimeEntry{" + "description='" + description + '\''
                 + ", rate=" + rate + ", time=" + time + '}';
     }
