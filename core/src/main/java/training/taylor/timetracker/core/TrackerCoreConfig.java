@@ -20,4 +20,5 @@ public class TrackerCoreConfig {
     public List<TimeEntry> timeEntries() {
         return new ArrayList<TimeEntry>();
     }
+
 }
