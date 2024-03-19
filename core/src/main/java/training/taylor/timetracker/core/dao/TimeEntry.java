@@ -9,40 +9,47 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class TimeEntry {
+    /** TimeEntry Object's description. */
     private String description;
+    /** TimeEntry Object's rate. */
     private float rate;
+
+    /** TimeEntry Object's time. */
     private int time;
 
+    /** @return - Getter to retrieve the description. */
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String value) {
+    /** @param value of type string to be set as description. */
+    public void setDescription(final String value) {
         this.description = value;
     }
 
+    /** @return - Getter to retrieve the rate. */
     public float getRate() {
         return rate;
     }
 
-    public void setRate(float value) {
+    /** @param value of type float to be set as Rate. */
+    public void setRate(final float value) {
         this.rate = value;
     }
 
+    /** @return - Getter to retrieve the time. */
     public int getTime() {
         return time;
     }
-
-    public void setTime(int value) {
+    /** @param value of type integer to be set as Time. */
+    public void setTime(final int value) {
         this.time = value;
     }
 
+    /** Method to represent the object into a string format. */
     @Override
     public String toString() {
-        return "TimeEntry{" +
-                "description='" + description + '\'' +
-                ", rate=" + rate +
-                ", time=" + time +
-                '}';
+        return "TimeEntry{" + "description='" + description + '\''
+                + ", rate=" + rate + ", time=" + time + '}';
     }
 }
