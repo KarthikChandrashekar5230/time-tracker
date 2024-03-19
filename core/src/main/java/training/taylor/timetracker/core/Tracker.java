@@ -53,4 +53,3 @@ public class TimeEntry {
                 + ", rate=" + rate + ", time=" + time + '}';
     }
 }
-
