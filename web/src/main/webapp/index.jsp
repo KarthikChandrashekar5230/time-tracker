@@ -8,12 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Super Simple Example Webpage</title>
+    <title>Super Simple Example Webpage Updated</title>
 </head>
 <body>
-  <h1>Super Simple Example Web Page</h1>
+  <h1>Super Simple Example Web Page Updated</h1>
   <p>
-    This is a very simple example web page on a JSP.
+    This is a very simple example web page on a JSP and has been modified in order to validate the new changes reflecting on the web page. 
   </p>
 </body>
 </html>
